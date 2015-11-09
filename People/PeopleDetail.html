@@ -1,0 +1,69 @@
+<div id="add-modal" class="modal-content" ng-controller="peopleDetailController">
+    <div class="modal-body">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+            <h2>{{SelectedPeople.name}}</h4>
+        </div>
+		<div class="panel-body">
+        <form>      		
+            <div class="form-group">
+                <label class="control-label">Height</label>
+				{{SelectedPeople.height}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">Mass</label>
+				{{SelectedPeople.mass}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Hair Color</label>
+				{{SelectedPeople.hair_color}}
+            </div>
+            <div class="form-group">
+                <label class="control-label">Skin Color</label>
+				{{SelectedPeople.skin_color}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Eye Color</label>
+				{{SelectedPeople.eye_color}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Birth Year</label>
+				{{SelectedPeople.birth_year}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Gender</label>
+				{{SelectedPeople.gender}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Homeworld</label>
+				{{SelectedPeople.homeworld}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Films</label>
+				<ul>
+					<li ng-repeat="film in SelectedPeople.films">{{film}}</li>
+				</ul>
+            </div>
+			<div class="form-group">
+                <label class="control-label">Species</label>
+				<ul>
+					<li ng-repeat="species in SelectedPeople.species">{{species}}</li>
+				</ul>
+            </div>
+			<div class="form-group">
+                <label class="control-label">Vehicles</label>
+				<ul>
+					<li ng-repeat="vehicle in SelectedPeople.vehicles">{{vehicle}}</li>
+				</ul>
+            </div>
+			<div class="form-group">
+                <label class="control-label">Starships</label>
+				<ul>
+					<li ng-repeat="starship in SelectedPeople.starships">{{starship}}</li>
+				</ul>
+            </div>
+        </form>
+		</div>
+    </div>
+	</div>
+</div>

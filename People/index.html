@@ -1,0 +1,68 @@
+<!-- index.html -->
+    <!DOCTYPE html>
+    <html ng-app="peopleModule">
+    <head>
+      <!-- STYLE -->
+      <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+
+      <!-- SCSRIPTS -->
+	  <script src="../Scripts/lib/jquery/jquery-1.11.0.js"></script>
+	   <script src="../Scripts/lib/jquery/jquery-ui-1.10.4.js"></script>
+	  <script src="../Scripts/lib/bootstrap/bootstrap.min.js"></script>
+      <script src="../Scripts/lib/angular/angular.js"></script>
+      <script src="../Scripts/lib/angular/angular-route.js"></script>
+	  <script src="../Scripts/lib/angular-plugin/ng-table.js"></script>
+	  <script src="../Scripts/lib/angular-plugin/ui-bootstrap-tpls-0.11.0.js"></script>
+	  <script src="../Scripts/app/app.js"></script>
+	  <script src="../Scripts/people/peopleModule.js"></script>
+	  <script src="../Scripts/people/service/modalService.js"></script>	 
+	  <script src="../Scripts/people/service/peopleService.js"></script>	   
+	  <script src="../Scripts/people/controller/peopleController.js"></script>
+	  <script src="../Scripts/people/controller/peopleDetailController.js"></script>     	 
+    </head>
+    <body>
+        <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Star Wars API People Data</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">People</a></li>
+                    <li><a href="../Planet/index.html">Planet</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main" class="container" ng-controller="peopleController">
+		<div class="row">
+            <table ng-table="tableParams" show-filter="booleanFilter" class="table table-condensed table-striped table-hover">
+                    <tbody class="table-body">
+                        <tr ng-repeat="people in $data">
+                            <td data-title="'No'">
+                                {{$index + 1}}
+                            </td>
+                            <td data-title="'Name'" filter="{ 'name': 'text' }" sortable="'name'">
+                                <a href="" class="btn btn-link btn-xs" ng-click="OpenPeopleDetail($index+1)">{{people.name}}</a>
+                            </td>
+                            <td data-title="'Gender'" filter="{ 'gender': 'text' }" sortable="'gender'">
+                                {{people.gender}}
+                            </td>
+                            <td data-title="'Height'" filter="{ 'height': 'text' }" sortable="'height'">
+                                {{people.height}}
+                            </td>
+                            <td data-title="'Mass'" filter="{ 'mass': 'text' }" sortable="'mass'">
+                                {{people.mass}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+		</div>
+    </body>
+    </html>

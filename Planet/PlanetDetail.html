@@ -1,0 +1,33 @@
+<div id="add-modal" class="modal-content" ng-controller="planetDetailController">
+    <div class="modal-body">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+            <h2>{{SelectedPlanet.name}}</h4>
+        </div>
+		<div class="panel-body">
+        <form>      		
+            <div class="form-group">
+                <label class="control-label">Rotation Period</label>
+				{{SelectedPlanet.rotation_period}}
+            </div>
+           <div class="form-group">
+                <label class="control-label">Orbital Period</label>
+				{{SelectedPlanet.orbital_period}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Diameter</label>
+				{{SelectedPlanet.diameter}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Climate</label>
+				{{SelectedPlanet.climate}}
+            </div>
+			<div class="form-group">
+                <label class="control-label">Gravity</label>
+				{{SelectedPlanet.gravity}}
+            </div>
+        </form>
+		</div>
+    </div>
+	</div>
+</div>
